@@ -1,45 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 15:30:41 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/22 17:45:18 by ykassim-         ###   ########.fr       */
+/*   Created: 2021/05/22 17:47:50 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/05/22 18:40:39 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
-
-void *ft_memset (void *s, int c, size_t n)
+#include <string.h>
+char *ft_strrchr(const char *s, int c)
 {
-	unsigned char *rep;
+	int i;
+	int len;
 
-	rep = (unsigned char *)s;
-	while (n > 0)
+	i = 0;
+	len = strlen(s);
+	while (i < len)
 	{
-		*rep = c;
-		rep++;
-		n--;
+		s++;
+		i++;
 	}
-	return s;
+
+	while (i > 0)
+	{
+		if(*s == c)
+			return (char *)s;
+		i--;
+		s--;
+	}
+	
+	return NULL;
 }
 
 int main()
 {
-	int m[8] = {1, 2, 3, 4, 5, 6, 7, 8};
-	ft_memset(m, 0, 12);
-	for (int i = 0; i < 8; i++)
-	{
-		printf("%d\n", m[i]);
-	}
-
-	char str[25] = "hello world";
-	ft_memset(str, '*', 3);
-	printf("%s\n", str);
-
+	char str[20] = "string is a string";
+	char *p = ft_strrchr(str, 's');
+	printf("%s\n", p);
 	return 0;
 }
+
