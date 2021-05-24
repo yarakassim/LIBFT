@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 15:35:06 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/24 10:42:21 by ykassim-         ###   ########.fr       */
+/*   Created: 2021/05/24 10:10:05 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/05/24 10:30:21 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-int ft_isascii(int c)
+
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if(c >= 0 && c < 178)
-		return 1;
+	while (n)
+	{
+		if(*s1 != *s2)
+			return *s1 - *s2;
+		s1++;
+		s2++;
+		n--;
+	}
 	return 0;
 }
 
 int main()
 {
-	printf("%d\n", ft_isascii(0177));
+	char a[10] = "";
+	char b[10] = "";
+	printf("%d\n", ft_strncmp(a, b, 3));
 	return 0;
 }
