@@ -1,32 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 13:56:41 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/25 10:32:10 by ykassim-         ###   ########.fr       */
+/*   Created: 2021/05/25 15:19:03 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/05/25 16:26:55 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-
-size_t ft_strlen(const char *s)
+void *ft_memmove(void *dst, const void *src, size_t len)
 {
 	int i;
+	unsigned char *d = (unsigned char *)dst;
+	unsigned char *s = (unsigned char *)src;
 
 	i = 0;
-	while (s[i] != '\0')
+	if (dst > src)
 	{
-		i++;
+		i = len - 1;
+		while (i >= 0)
+		{
+			d[i] = s[i];
+			i--;
+		}
 	}
-	return (size_t)i;
+	else
+	{
+		while (i < len)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	return dst;
 }
-
-int main()
+int main(int ac, char **av)
 {
-	const char str[60] = "badhello";
-	printf("%zu\n", ft_strlen(str));
+	char d[20] = "hello";
+	ft_memmove(d+3, d, 5);
+	printf("%s\n", d);
 	return 0;
 }

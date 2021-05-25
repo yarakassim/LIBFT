@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 13:56:41 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/25 10:32:10 by ykassim-         ###   ########.fr       */
+/*   Created: 2021/05/24 10:10:05 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/05/24 10:30:21 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-size_t ft_strlen(const char *s)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int i;
-
-	i = 0;
-	while (s[i] != '\0')
+	while (n)
 	{
-		i++;
+		if(*s1 != *s2)
+			return *s1 - *s2;
+		s1++;
+		s2++;
+		n--;
 	}
-	return (size_t)i;
+	return 0;
 }
 
 int main()
 {
-	const char str[60] = "badhello";
-	printf("%zu\n", ft_strlen(str));
+	char a[10] = "";
+	char b[10] = "";
+	printf("%d\n", ft_strncmp(a, b, 3));
 	return 0;
 }

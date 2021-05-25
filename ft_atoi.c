@@ -1,32 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 13:56:41 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/25 10:32:10 by ykassim-         ###   ########.fr       */
+/*   Created: 2021/05/25 11:51:19 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/05/25 14:16:03 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-size_t ft_strlen(const char *s)
+int check_space(char c)
 {
-	int i;
+	if (c == 32 || (c >= 9 && c <= 13))
+		return 1;
+	return 0;
+}
 
-	i = 0;
-	while (s[i] != '\0')
+int ft_atoi(const char *str)
+{
+	int n = 0;
+	int i = 0;
+	int sign = 1;
+
+	while (check_space(str[i]))
+		i++;
+	if (str[i] == 45 || str[i] == 43)
 	{
+		if (str[i] == 45)
+			sign = -1;
 		i++;
 	}
-	return (size_t)i;
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		n = n * 10 + str[i] - 48;
+		i++;
+	}
+	return (n * sign);
 }
 
 int main()
 {
-	const char str[60] = "badhello";
-	printf("%zu\n", ft_strlen(str));
-	return 0;
+	int v;
+	const char str[22] = "    -2345ba";
+
+	v = ft_atoi(str); 
+	printf("%d\n", v);
 }

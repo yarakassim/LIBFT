@@ -6,35 +6,30 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 10:15:15 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/22 13:56:22 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/05/25 16:10:15 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void *ft_memcpy( void *dest, const void *src, size_t n)
+void *ft_memcpy(void *dst, const void *src, size_t len)
 {
-	const char *d = dest;
-	while (n > 0)
+	int i;
+	unsigned char *d = (unsigned char *)dst;
+	unsigned char *s = (unsigned char *)src;
+
+	i = 0;
+	while (i < len)
 	{
-		d = src;
-		src++;
-		d++;
-		n--;
+		d[i] = s[i];
+		i++;
 	}
-	return dest;
+	return dst;
 }
-
-int main()
+int main(int ac, char **av)
 {
-  int source[4] = {4, 8, 9, 4};
-  int destination[7] = {2, 5, 8, 6, 0, 4, 66};
-  /* Printing destination string before memcpy */
-  printf("Original String: %d\n", destination[3]);
-  /* Copies contents of source to destination */
-  ft_memcpy (destination, source, sizeof(source));
-  /* Printing destination string after memcpy */
-  printf("Modified String: %d\n", destination[3]);
-
-  return 0;
+	char d[20] = "hello";
+	ft_memcpy(d+3, d, 5);
+	printf("%s\n", d);
+	return 0;
 }

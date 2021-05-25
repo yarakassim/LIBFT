@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 13:56:41 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/25 10:32:10 by ykassim-         ###   ########.fr       */
+/*   Created: 2021/05/24 10:43:08 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/05/24 11:23:37 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-
-size_t ft_strlen(const char *s)
+size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int i;
-
-	i = 0;
-	while (s[i] != '\0')
+	while (dstsize > 0)
 	{
-		i++;
+		*dst = *src;
+		dst++;
+		src++;
+		dstsize--;
 	}
-	return (size_t)i;
-}
-
-int main()
-{
-	const char str[60] = "badhello";
-	printf("%zu\n", ft_strlen(str));
-	return 0;
+	*dst = '\0';
+	return ft_strlen(src);
 }

@@ -6,7 +6,7 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 15:30:41 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/22 17:45:18 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/05/25 14:39:46 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void *ft_memset (void *s, int c, size_t n)
+void *ft_memset (void *b, int c, size_t len)
 {
 	unsigned char *rep;
 
-	rep = (unsigned char *)s;
-	while (n > 0)
+	rep = (unsigned char *)b;
+	while (len > 0)
 	{
-		*rep = c;
+		*rep = (unsigned char)c;
 		rep++;
-		n--;
+		len--;
 	}
-	return s;
+	return b;
 }
 
 int main()

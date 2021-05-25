@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 13:56:41 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/25 10:32:10 by ykassim-         ###   ########.fr       */
+/*   Created: 2021/05/25 10:05:00 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/05/25 11:50:52 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-
-size_t ft_strlen(const char *s)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int i;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (s[i] != '\0')
+	if (!needle)
+		return ((char *)haystack);
+	while (haystack[i] != '\0' && i < len)
 	{
+		j = 0;
+		while (needle[j] == haystack[i + j] && (i + j) < len)
+		{
+			j++;
+			if (needle[j] == '\0')
+				return ((char *)&haystack[i]);
+		}
 		i++;
 	}
-	return (size_t)i;
+	return (NULL);
 }
 
-int main()
+int		main(int ac, char **av)
 {
-	const char str[60] = "badhello";
-	printf("%zu\n", ft_strlen(str));
-	return 0;
+	printf("%s\n", ft_strnstr(av[1], av [2], 100));
+	return (0);
 }

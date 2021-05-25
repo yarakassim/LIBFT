@@ -1,32 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 13:56:41 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/25 10:32:10 by ykassim-         ###   ########.fr       */
+/*   Created: 2021/05/24 11:24:38 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/05/24 17:00:19 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-
 size_t ft_strlen(const char *s)
 {
-	int i;
+	size_t len;
 
-	i = 0;
-	while (s[i] != '\0')
+	len = 0;
+	while (*s)
 	{
-		i++;
+		len++;
+		s++;
 	}
-	return (size_t)i;
+	return len;
 }
 
-int main()
+size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	const char str[60] = "badhello";
-	printf("%zu\n", ft_strlen(str));
+	int dstlen = ft_strlen(dst);
+	int srclen = ft_strlen(src);
+	int i = 0;
+
+	while (src)
+	{
+		if(i > dstsize - dstlen - 1)
+			break;
+		dst[dstlen + i] = *src;
+		i++;
+		src++;
+	}
+	dst[dstlen + i] = '\0';
+	return dstlen + srclen;
+}
+
+int main(int ac, char **av)
+{
+	printf("%zu\n", ft_strlcat(av[1], av[2], 4));
+	printf("%s\n", av[1]);
 	return 0;
 }
