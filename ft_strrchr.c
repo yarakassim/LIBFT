@@ -6,7 +6,7 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 17:47:50 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/22 18:40:39 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/05/26 16:44:20 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,19 @@
 #include <string.h>
 char *ft_strrchr(const char *s, int c)
 {
-	int i;
 	int len;
 
-	i = 0;
 	len = strlen(s);
-	while (i < len)
+	while (s)
 	{
 		s++;
-		i++;
 	}
 
-	while (i > 0)
+	while (len)
 	{
-		if(*s == c)
+		if(*s == (char)c)
 			return (char *)s;
-		i--;
+		len--;
 		s--;
 	}
 	

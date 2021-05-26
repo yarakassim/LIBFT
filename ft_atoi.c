@@ -1,45 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 15:30:41 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/26 15:42:42 by ykassim-         ###   ########.fr       */
+/*   Created: 2021/05/25 11:51:19 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/05/25 14:16:03 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
 
-void *ft_memset (void *b, int c, size_t len)
+int check_space(char c)
 {
-	unsigned char *rep;
+	if (c == 32 || (c >= 9 && c <= 13))
+		return 1;
+	return 0;
+}
 
-	rep = (unsigned char *)b;
-	while (len > 0)
+int ft_atoi(const char *str)
+{
+	int n = 0;
+	int i = 0;
+	int sign = 1;
+
+	while (check_space(str[i]))
+		i++;
+	if (str[i] == 45 || str[i] == 43)
 	{
-		*rep = (unsigned char)c;
-		rep++;
-		len--;
+		if (str[i] == 45)
+			sign = -1;
+		i++;
 	}
-	return b;
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		n = n * 10 + str[i] - 48;
+		i++;
+	}
+	return (n * sign);
 }
 
 int main()
 {
-	int m[8] = {1, 2, 3, 4, 5, 6, 7, 8};
-	ft_memset(m, 0, 12);
-	for (int i = 0; i < 8; i++)
-	{
-		printf("%d\n", m[i]);
-	}
+	int v;
+	const char str[22] = "    -2345ba";
 
-	char str[25] = "hello world";
-	ft_memset(str, '*', 3);
-	printf("%s\n", str);
-
-	return 0;
+	v = ft_atoi(str); 
+	printf("%d\n", v);
 }

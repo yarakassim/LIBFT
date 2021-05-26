@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 16:26:11 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/26 16:38:20 by ykassim-         ###   ########.fr       */
+/*   Created: 2021/05/26 16:49:18 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/05/26 16:59:44 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stdio.h>
-char *ft_strchr(const char *s, int c)
+void *ft_calloc(size_t count, size_t size)
 {
-	while (s)
-	{
-		if(*s == (char)c)
-			return (char *)s;
-		s++;
-	}
-	
-	return NULL;
-}
+	void *p;
 
+	p = malloc(count * size);
+	while (p)
+	{
+		*p = '\0';
+		p++;
+	}
+	return p;
+}
 int main()
 {
-	char str[20] = "string is a string";
-	char *p = ft_strchr(str, 'a');
-	printf("%s\n", p);
-	return 0;
+
 }

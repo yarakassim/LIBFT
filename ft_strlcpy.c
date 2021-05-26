@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 16:26:11 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/26 16:38:20 by ykassim-         ###   ########.fr       */
+/*   Created: 2021/05/24 10:43:08 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/05/24 11:23:37 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stdio.h>
-char *ft_strchr(const char *s, int c)
+size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	while (s)
+	while (dstsize > 0)
 	{
-		if(*s == (char)c)
-			return (char *)s;
-		s++;
+		*dst = *src;
+		dst++;
+		src++;
+		dstsize--;
 	}
-	
-	return NULL;
-}
-
-int main()
-{
-	char str[20] = "string is a string";
-	char *p = ft_strchr(str, 'a');
-	printf("%s\n", p);
-	return 0;
+	*dst = '\0';
+	return ft_strlen(src);
 }

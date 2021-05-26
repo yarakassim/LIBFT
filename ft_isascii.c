@@ -6,8 +6,20 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 15:35:06 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/22 15:53:08 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/05/24 10:42:21 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+int ft_isascii(int c)
+{
+	if(c >= 0 && c < 178)
+		return 1;
+	return 0;
+}
 
+int main()
+{
+	printf("%d\n", ft_isascii(0177));
+	return 0;
+}

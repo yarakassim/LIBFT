@@ -1,45 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 15:30:41 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/26 15:42:42 by ykassim-         ###   ########.fr       */
+/*   Created: 2021/05/25 10:05:00 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/05/25 11:50:52 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
-
-void *ft_memset (void *b, int c, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned char *rep;
+	size_t	i;
+	size_t	j;
 
-	rep = (unsigned char *)b;
-	while (len > 0)
+	i = 0;
+	if (!needle)
+		return ((char *)haystack);
+	while (haystack[i] != '\0' && i < len)
 	{
-		*rep = (unsigned char)c;
-		rep++;
-		len--;
+		j = 0;
+		while (needle[j] == haystack[i + j] && (i + j) < len)
+		{
+			j++;
+			if (needle[j] == '\0')
+				return ((char *)&haystack[i]);
+		}
+		i++;
 	}
-	return b;
+	return (NULL);
 }
 
-int main()
+int		main(int ac, char **av)
 {
-	int m[8] = {1, 2, 3, 4, 5, 6, 7, 8};
-	ft_memset(m, 0, 12);
-	for (int i = 0; i < 8; i++)
-	{
-		printf("%d\n", m[i]);
-	}
-
-	char str[25] = "hello world";
-	ft_memset(str, '*', 3);
-	printf("%s\n", str);
-
-	return 0;
+	printf("%s\n", ft_strnstr(av[1], av [2], 100));
+	return (0);
 }

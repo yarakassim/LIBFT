@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 16:26:11 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/26 16:38:20 by ykassim-         ###   ########.fr       */
+/*   Created: 2021/05/24 10:10:05 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/05/24 10:30:21 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stdio.h>
-char *ft_strchr(const char *s, int c)
+
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (s)
+	while (n)
 	{
-		if(*s == (char)c)
-			return (char *)s;
-		s++;
+		if(*s1 != *s2)
+			return *s1 - *s2;
+		s1++;
+		s2++;
+		n--;
 	}
-	
-	return NULL;
+	return 0;
 }
 
 int main()
 {
-	char str[20] = "string is a string";
-	char *p = ft_strchr(str, 'a');
-	printf("%s\n", p);
+	char a[10] = "";
+	char b[10] = "";
+	printf("%d\n", ft_strncmp(a, b, 3));
 	return 0;
 }

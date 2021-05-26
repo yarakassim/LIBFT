@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 16:26:11 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/26 16:38:20 by ykassim-         ###   ########.fr       */
+/*   Created: 2021/05/26 12:27:13 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/05/26 15:36:20 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stdio.h>
-char *ft_strchr(const char *s, int c)
+#include <string.h>
+void *ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	while (s)
+	unsigned char *d = (unsigned char *)dst;
+	unsigned char *s = (unsigned char *)src;
+
+	while (n)
 	{
-		if(*s == (char)c)
-			return (char *)s;
+		*d = *s;
+		if (*d == (unsigned char)c)
+		{
+			d++;
+			return d;
+		}
+		n--;
+		d++;
 		s++;
 	}
-	
 	return NULL;
 }
-
 int main()
 {
-	char str[20] = "string is a string";
-	char *p = ft_strchr(str, 'a');
-	printf("%s\n", p);
+	char s[20] = "hello";
+	char d[20] = "parapluie";
+	printf("%s\n", ft_memccpy(d, s, 'e', 6));
+	printf("%s\n", d);
 	return 0;
 }
