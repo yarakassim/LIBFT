@@ -5,14 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/25 15:19:03 by ykassim-          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2021/05/26 15:56:03 by ykassim-         ###   ########.fr       */
-=======
-/*   Updated: 2021/05/25 16:26:55 by ykassim-         ###   ########.fr       */
->>>>>>> 77f53a2256c6baa4787f2bea3acfa41aaacc8d62
+/*   Created: 2021/05/27 10:34:56 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/05/27 10:35:04 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include <stdio.h>
 void *ft_memmove(void *dst, const void *src, size_t len)
