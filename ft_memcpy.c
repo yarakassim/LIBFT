@@ -18,7 +18,6 @@
 
 void *ft_memcpy(void *dst, const void *src, size_t len)
 {
-<<<<<<< HEAD
 	unsigned char *d = (unsigned char *)dst;
 	unsigned char *s = (unsigned char *)src;
 
@@ -28,17 +27,6 @@ void *ft_memcpy(void *dst, const void *src, size_t len)
 		d++;
 		s++;
 		len--;
-=======
-	int i;
-	unsigned char *d = (unsigned char *)dst;
-	unsigned char *s = (unsigned char *)src;
-
-	i = 0;
-	while (i < len)
-	{
-		d[i] = s[i];
-		i++;
->>>>>>> 77f53a2256c6baa4787f2bea3acfa41aaacc8d62
 	}
 	return dst;
 }
