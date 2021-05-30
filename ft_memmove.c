@@ -6,7 +6,7 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 10:34:56 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/27 10:35:04 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/05/30 16:03:42 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		while (i < len)
+		while ((size_t)i < len)
 		{
 			d[i] = s[i];
 			i++;
@@ -38,10 +38,11 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return dst;
 }
-int main(int ac, char **av)
+/* int main(int ac, char **av)
 {
 	char d[20] = "hello";
 	ft_memmove(d+3, d, 5);
 	printf("%s\n", d);
 	return 0;
 }
+*/

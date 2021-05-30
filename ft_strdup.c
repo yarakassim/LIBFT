@@ -6,7 +6,7 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 09:44:02 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/27 10:12:38 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/05/30 15:42:51 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,11 @@ char *ft_strdup(const char *s1)
 	}
 	return dup;
 }
-int main(int ac, char **av)
+/* int main(int ac, char **av)
 {
 	char *d;
 	d = ft_strdup(av[1]);
 	printf("%s\n", d);
 	return 0;
 }
+*/

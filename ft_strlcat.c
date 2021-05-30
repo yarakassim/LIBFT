@@ -6,7 +6,7 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 11:24:38 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/24 17:00:19 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/05/30 16:01:27 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	while (src)
 	{
-		if(i > dstsize - dstlen - 1)
+		if(i > (int)dstsize - dstlen - 1)
 			break;
 		dst[dstlen + i] = *src;
 		i++;
@@ -42,9 +42,10 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return dstlen + srclen;
 }
 
-int main(int ac, char **av)
+/* int main(int ac, char **av)
 {
 	printf("%zu\n", ft_strlcat(av[1], av[2], 4));
 	printf("%s\n", av[1]);
 	return 0;
 }
+*/

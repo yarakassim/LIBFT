@@ -6,7 +6,7 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 10:05:00 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/25 11:50:52 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/05/30 15:43:19 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (NULL);
 }
 
-int		main(int ac, char **av)
+/* int		main(int ac, char **av)
 {
 	printf("%s\n", ft_strnstr(av[1], av [2], 100));
 	return (0);
 }
+*/
