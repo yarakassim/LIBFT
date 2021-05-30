@@ -6,11 +6,11 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 10:05:00 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/30 15:43:19 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/05/30 18:27:16 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
@@ -32,10 +32,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-/* int		main(int ac, char **av)
-{
-	printf("%s\n", ft_strnstr(av[1], av [2], 100));
-	return (0);
-}
-*/

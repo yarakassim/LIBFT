@@ -6,20 +6,14 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 16:14:59 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/22 16:25:59 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/05/30 18:28:39 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-int ft_tolower(int c)
+#include "libft.h"
+int	ft_tolower	(int c)
 {
-	if(c > 64 && c < 91)
+	if (c > 64 && c < 91)
 		c = c + 32;
-	return c;
-}
-
-int main()
-{
-	printf("%c\n", ft_tolower(97));
-	return 0;
+	return (c);
 }

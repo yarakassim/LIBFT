@@ -6,25 +6,28 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 11:51:19 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/25 14:16:03 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/05/30 17:46:10 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int check_space(char c)
+int	check_space(char c)
 {
 	if (c == 32 || (c >= 9 && c <= 13))
-		return 1;
-	return 0;
+		return (1);
+	return (0);
 }
 
-int ft_atoi(const char *str)
+int	ft_atoi	(const char *str)
 {
-	int n = 0;
-	int i = 0;
-	int sign = 1;
+	int	n;
+	int	i;
+	int	sign;
 
+	n = 0;
+	i = 0;
+	sign = 1;
 	while (check_space(str[i]))
 		i++;
 	if (str[i] == 45 || str[i] == 43)
@@ -39,13 +42,4 @@ int ft_atoi(const char *str)
 		i++;
 	}
 	return (n * sign);
-}
-
-int main()
-{
-	int v;
-	const char str[22] = "    -2345ba";
-
-	v = ft_atoi(str); 
-	printf("%d\n", v);
 }

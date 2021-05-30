@@ -6,17 +6,14 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 10:33:44 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/27 10:33:49 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/05/30 18:14:14 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-void *ft_memset (void *b, int c, size_t len)
+#include "libft.h"
+void	*ft_memset	(void *b, int c, size_t len)
 {
-	unsigned char *rep;
+	unsigned char	*rep;
 
 	rep = (unsigned char *)b;
 	while (len)
@@ -25,21 +22,5 @@ void *ft_memset (void *b, int c, size_t len)
 		rep++;
 		len--;
 	}
-	return b;
-}
-
-int main()
-{
-	int m[8] = {1, 2, 3, 4, 5, 6, 7, 8};
-	ft_memset(m, 0, 12);
-	for (int i = 0; i < 8; i++)
-	{
-		printf("%d\n", m[i]);
-	}
-
-	char str[25] = "hello world";
-	ft_memset(str, '*', 3);
-	printf("%s\n", str);
-
-	return 0;
+	return (b);
 }

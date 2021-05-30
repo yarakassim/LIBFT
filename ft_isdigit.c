@@ -6,22 +6,15 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 14:53:50 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/22 15:17:42 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/05/30 17:53:50 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int ft_isdigit(int c)
+#include "libft.h"
+int	ft_isdigit	(int c)
 {
-	if(c > 47 && c < 58)
-		return 1;
+	if (c > 47 && c < 58)
+		return (1);
 	else
-		return 0;
-}
-
-int main()
-{
-	printf("%d\n", ft_isdigit('e'));
-	return 0;
+		return (0);
 }

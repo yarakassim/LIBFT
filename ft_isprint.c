@@ -6,22 +6,15 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 15:53:20 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/22 16:07:45 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/05/30 17:55:04 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int ft_isprint(int c)
+#include "libft.h"
+int	ft_isprint	(int c)
 {
-	if(c > 32 && c < 128)
-		return 1;
+	if (c > 32 && c < 128)
+		return (1);
 	else
-		return 0;
-}
-
-int main()
-{
-	printf("%d\n", ft_isprint('-'));
-	return 0;
+		return (0);
 }

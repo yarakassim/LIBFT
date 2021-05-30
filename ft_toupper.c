@@ -6,20 +6,14 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 16:08:08 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/22 16:14:33 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/05/30 18:30:24 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-int ft_toupper(int c)
+#include "libft.h"
+int	ft_toupper	(int c)
 {
-	if(c > 96 && c < 123)
+	if (c > 96 && c < 123)
 		c = c - 32;
-	return c;
-}
-
-int main()
-{
-	printf("%c\n", ft_toupper(65));
-	return 0;
+	return (c);
 }
