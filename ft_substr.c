@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 14:26:23 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/31 14:47:31 by ykassim-         ###   ########.fr       */
+/*   Created: 2021/05/31 08:25:01 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/05/31 14:17:19 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_isalpha	(int c)
+char	*ft_substr	(char const *s, unsigned int start, size_t len)
 {
-	if ((c > 64 && c < 91) || (c > 96 && c < 123))
-		return (1);
-	else
-		return (0);
+	char	*str;
+	size_t	i;
+
+	if (s == NULL)
+		return (NULL);
+	if (ft_strlen(s) < start)
+		return (NULL);
+	i = ft_strlen(s) - start;
+	if (i > len)
+		i = len;
+	str = malloc(sizeof(char) * i + 1);
+	ft_strlcpy(str, &s[start], i);
+	return (str);
 }

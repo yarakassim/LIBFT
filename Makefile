@@ -6,11 +6,16 @@
 #    By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/27 12:09:43 by ykassim-          #+#    #+#              #
-#    Updated: 2021/05/30 16:14:11 by ykassim-         ###   ########.fr        #
+#    Updated: 2021/05/31 13:17:06 by ykassim-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+AR = ar rcs
+RM = rm -rf
 
 SRC = ft_isalpha.c \
 	  ft_memchr.c \
@@ -39,21 +44,18 @@ SRC = ft_isalpha.c \
 
 OBJ = $(SRC:.c=.o)
 
-CC = gcc
-
-CFLAGS = -Wall -Wextra -Werror
-
 all : $(NAME)
 
 $(NAME): $(OBJ)
-	ar -rcs $(NAME) $(OBJ)
+	$(AR) $@ $^
 
-%.o: %.c
-	$(CC) -o $@ -c $< $(CFLAGS)
+.c.o: $(SRC)
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean :
-	rm -rf *.o $(OBJ)
+	$(RM) $(OBJ)
 
-fclean
+fclean : clean
+	$(RM) $(NAME)
 
-re
+re : fclean all

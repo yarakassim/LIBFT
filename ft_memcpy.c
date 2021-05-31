@@ -6,7 +6,7 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 10:32:35 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/30 18:10:03 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/05/31 15:44:23 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy	(void *dst, const void *src, size_t len)
 
 	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
+	if (src == NULL && dst == NULL)
+		return (NULL);
 	while (len)
 	{
 		*d = *s;
