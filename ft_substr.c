@@ -6,11 +6,12 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 08:25:01 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/31 14:17:19 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/06/02 15:49:28 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_substr	(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
@@ -23,7 +24,6 @@ char	*ft_substr	(char const *s, unsigned int start, size_t len)
 	i = ft_strlen(s) - start;
 	if (i > len)
 		i = len;
-	str = malloc(sizeof(char) * i + 1);
-	ft_strlcpy(str, &s[start], i);
+	str = ft_strdup(&s[start]);
 	return (str);
 }

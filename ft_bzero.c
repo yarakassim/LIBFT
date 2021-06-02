@@ -6,11 +6,10 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 09:42:58 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/30 17:38:36 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/06/01 11:18:39 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)

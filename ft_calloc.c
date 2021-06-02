@@ -6,22 +6,20 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:49:18 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/30 17:42:54 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/06/02 14:38:31 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
+
 void	*ft_calloc	(size_t count, size_t size)
 {
 	int				i;
 	unsigned char	*p;
 
 	i = 0;
-	p = malloc(count * size);
-	while (p[i])
-	{
-		p[i] = '\0';
-		i++;
-	}
-	return ((void *)p);
+	if (!(p = (unsigned char *)malloc(count * size)))
+		return (NULL);
+	ft_bzero(p, count * size);
+	return (p);
 }

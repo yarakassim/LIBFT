@@ -6,17 +6,18 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:10:05 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/30 18:26:29 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/06/01 11:23:03 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	ft_strncmp	(const char *s1, const char *s2, size_t n)
 {
-	while (n)
+	while (n && (*s1 || *s2))
 	{
 		if (*s1 != *s2)
-			return (*s1 - *s2);
+			return ((unsigned char)*s1 - *s2);
 		s1++;
 		s2++;
 		n--;

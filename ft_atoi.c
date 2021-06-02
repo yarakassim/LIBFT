@@ -6,7 +6,7 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 11:51:19 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/30 17:46:10 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/06/02 14:28:17 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	check_space(char c)
 
 int	ft_atoi	(const char *str)
 {
-	int	n;
-	int	i;
-	int	sign;
+	long	n;
+	int		i;
+	int		sign;
 
 	n = 0;
 	i = 0;
@@ -36,10 +36,14 @@ int	ft_atoi	(const char *str)
 			sign = -1;
 		i++;
 	}
-	while (str[i] >= 48 && str[i] <= 57)
+	while (ft_isdigit(str[i]))
 	{
 		n = n * 10 + str[i] - 48;
 		i++;
+		if (n > 2147483648 && sign == 1)
+			return (-1);
+		if (n > 2147483648 && sign == -1)
+			return (0);
 	}
 	return (n * sign);
 }

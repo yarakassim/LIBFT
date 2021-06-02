@@ -6,11 +6,12 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 14:53:54 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/31 15:42:50 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/06/01 11:21:02 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	ft_memcmp	(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*str1;

@@ -6,18 +6,22 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 16:26:11 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/05/30 18:16:29 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/06/01 11:21:55 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char	*ft_strchr	(const char *s, int c)
+
+char	*ft_strchr(const char *s, int c)
 {
-	while (s)
+	char	*str;
+
+	str = (char *)s;
+	while (*str != c)
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		if (!*str)
+			return (NULL);
+		str++;
 	}
-	return (NULL);
+	return (str);
 }
