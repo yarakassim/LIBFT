@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/31 08:25:01 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/06/03 09:14:41 by ykassim-         ###   ########.fr       */
+/*   Created: 2021/06/03 09:21:16 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/06/03 11:57:06 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr	(char const *s, unsigned int start, size_t len)
+char	*ft_itoa(int n)
 {
-	char	*str;
-	size_t	i;
+	char 	*str;
 
-	i = 0;
-	if (!s)
+	if(!(str = (char *)malloc(sizeof(char) * 2)))
 		return (NULL);
-	if (start >= ft_strlen(s) || (len == 0))
-		return (ft_calloc(1, sizeof(char)));
-	if (len > ft_strlen(s) - start)
-		len = ft_strlen(s) - start;
-	if (!(str = malloc(sizeof(*s) * (len + 1))))
-		return (NULL);
-	while (i < len)
-		str[i++] = s[start++];
-	str[len] = '\0';
+	if (n == -2147483648)
+		return (str = ft_strdup("-2147483648"));
+	if (n < 0)
+	{
+		str[0] = '-';
+		str[1] = '\0';
+		str = ft_strjoin(str, ft_itoa(-n));
+	}
+	else if (n >= 10)
+		str = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
+	else if (n < 10 && n >= 0)
+	{
+		str[0] = n + 48;
+		str[1] = '\0';
+	}
 	return (str);
 }

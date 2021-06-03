@@ -6,7 +6,7 @@
 #    By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/27 12:09:43 by ykassim-          #+#    #+#              #
-#    Updated: 2021/06/02 15:36:01 by ykassim-         ###   ########.fr        #
+#    Updated: 2021/06/03 12:45:09 by ykassim-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,9 @@ SRC = ft_isalpha.c \
 	  ft_strlen.c \
 	  ft_toupper.c \
 	  ft_substr.c \
-	  ft_strjoin.c
+	  ft_strjoin.c \
+	  ft_itoa.c \
+	  ft_strtrim.c
 
 OBJ = $(SRC:.c=.o)
 
