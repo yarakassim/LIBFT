@@ -6,7 +6,7 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 10:05:00 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/06/02 11:49:36 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/06/04 08:20:32 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t len2;
+	size_t	len2;
 
 	if (*needle == '\0')
 		return ((char *)haystack);
