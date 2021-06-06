@@ -6,7 +6,7 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 15:44:18 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/06/04 15:45:26 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/06/06 18:44:43 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,13 @@ char	**ft_split(char const *s, char c);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
+t_list	*ft_lstnew(void *content);
+
+typedef	struct	s_list
+{
+	void			*content;
+	struct s_list	*next;
+					t_list;
+};
 
 #endif

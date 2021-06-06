@@ -6,7 +6,7 @@
 #    By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/27 12:09:43 by ykassim-          #+#    #+#              #
-#    Updated: 2021/06/04 15:45:45 by ykassim-         ###   ########.fr        #
+#    Updated: 2021/06/06 18:29:20 by ykassim-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,8 @@ SRC = ft_isalpha.c \
 	  ft_putchar_fd.c \
 	  ft_putstr_fd.c \
 	  ft_putendl_fd.c \
-	  ft_putnbr_fd.c
+	  ft_putnbr_fd.c \
+	  ft_lstnew.c
 
 OBJ = $(SRC:.c=.o)
 
