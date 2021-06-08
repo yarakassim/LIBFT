@@ -6,7 +6,7 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 17:53:02 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/06/06 18:46:35 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/06/07 15:22:51 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*five;
-	five = (t_list *)malloc(sizeof(*five));
+
+	five = (t_list *)malloc(sizeof(t_list));
 	if (!five)
 		return (NULL);
 	five->content = content;

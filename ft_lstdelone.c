@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 17:47:50 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/06/07 14:51:31 by ykassim-         ###   ########.fr       */
+/*   Created: 2021/06/07 16:13:13 by ykassim-          #+#    #+#             */
+/*   Updated: 2021/06/07 19:08:00 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr	(const char *s, int c)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	char	*str;
-	size_t	len;
-
-	str = (char *)s;
-	len = ft_strlen(str);
-	if ((char)c == '\0')
-		return (str + len);
-	while (len--)
-		if (*(str + len) == (char)c)
-			return (str + len);
-	return (NULL);
+	if (lst)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }

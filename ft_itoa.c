@@ -6,33 +6,54 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 09:21:16 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/06/04 08:17:23 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/06/07 17:16:37 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int	ft_intlen(int n)
+{
+	int	i;
+
+	i = 0;
+	if (n == 0)
+		return (++i);
+	if (n < 0)
+		i++;
+	while (n)
+	{
+		n = n / 10;
+		i++;
+	}
+	return (i);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*str;
+	long	nb;
+	int		len;
 
-	str = (char *)malloc(sizeof(char) * 2);
+	if (n < -2147483648 || n > 2147483647)
+		return (NULL);
+	nb = n;
+	len = ft_intlen(n);
+	str = (char *)malloc(sizeof(char) * len + 1);
 	if (!str)
 		return (NULL);
-	if (n == -2147483648)
-		return (str = ft_strdup("-2147483648"));
-	if (n < 0)
+	str[len--] = '\0';
+	if (nb == 0)
+		str[0] = 48;
+	if (nb < 0)
 	{
 		str[0] = '-';
-		str[1] = '\0';
-		str = ft_strjoin(str, ft_itoa(-n));
+		nb = -nb;
 	}
-	else if (n >= 10)
-		str = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
-	else if (n < 10 && n >= 0)
+	while (nb > 0)
 	{
-		str[0] = n + 48;
-		str[1] = '\0';
+		str[len--] = (nb % 10) + 48;
+		nb = nb / 10;
 	}
 	return (str);
 }

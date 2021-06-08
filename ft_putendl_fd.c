@@ -6,7 +6,7 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 15:44:41 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/06/06 15:44:46 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/06/07 15:21:57 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	char n;
+	char	n;
 
 	n = '\n';
 	ft_putstr_fd(s, fd);
-	write(fd, &n, 1); 
+	write(fd, &n, 1);
 }
