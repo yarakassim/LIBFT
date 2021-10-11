@@ -6,13 +6,12 @@
 /*   By: ykassim- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 08:05:02 by ykassim-          #+#    #+#             */
-/*   Updated: 2021/06/04 15:20:25 by ykassim-         ###   ########.fr       */
+/*   Updated: 2021/06/09 11:51:22 by ykassim-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdio.h>
 int	rowcount(char *str, char c)
 {
 	int	check;
